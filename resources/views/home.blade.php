@@ -17,11 +17,31 @@
 
 <body>
 
-    <main class="bg-light">
-        <div class="container">
+    <main>
+        <header>
+            <div class="header text-center">
+                <h1>Movies</h1>
+            </div>
+
+        </header>
+        <div class="container d-flex flex-wrap">
             @foreach ($movies as $movie)
-                <p>{{ $movie['title'] }}</p>
+                <div class="card m-2" style="width: 18rem;">
+
+                    <img src="{{ $movie['image'] }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+
+
+                        <h5 class="card-title">{{ $movie['title'] }}</h5>
+
+                        <p class="card-text">{{ $movie['original_title'] }} - {{ $movie['nationality'] }}</p>
+
+                    </div>
+                </div>
             @endforeach
+
+        </div>
+
 
         </div>
     </main>
